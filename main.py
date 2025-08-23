@@ -4,7 +4,7 @@ from src.controller import TradingController
 def main():
     # Load data
     try:
-        data = pd.read_csv('data/sample_data.csv', parse_dates=['date'])
+        data = pd.read_csv('data.csv', parse_dates=['date'])
         # Clip negative prices to avoid invalid trades
         data['price_a'] = data['price_a'].clip(lower=0.01)
         data['price_b'] = data['price_b'].clip(lower=0.01)
